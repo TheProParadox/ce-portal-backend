@@ -1,0 +1,54 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method=POST>
+        {% csrf_token %}
+        <input type="hidden" name="number" value=1 id="num">
+        <div id="main">
+            <div id="a">
+                <h1>Team</h1>
+                <p>
+                    <label for="id_name"> Team Name:</label>
+                    <input type="text" name="name" maxlength="50" required="" id="id_name">
+                </p>
+                <p>
+                    <label for="id_city"> City:</label>
+                    {{ form.city }}
+                </p>
+                <p>
+                    <label for="id_competition">Competition:</label>
+                    {{ form.competition }}
+                </p>
+            </div>
+            <div id="a">
+                <h1>Candidate 1</h1>
+                <p>
+                    <label for="id_name">Name:</label>
+                    <input type="text" name="name0" maxlength="50" required="" id="id_name">
+
+
+                </p>
+                <p>
+                    <label for="id_email">Email:</label>
+                    <input type="email" name="email0" maxlength="254" required="" id="id_email">
+                </p>
+            </div>
+        </div>
+        <button id="button1">Add</button>
+        <button class="button" type="submit"><span style="color:red"><b>Register</b></span></button>
+    </form>
+</body>
+<script src="{% static 'form/button.js' %}">
+</script>
+
+</html>
